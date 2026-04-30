@@ -1,0 +1,7 @@
+/* App.css — All component-specific styles are in their own CSS files.
+   Only app-level layout rules live here. */
+
+.page-main {
+  min-height: 100vh;
+  /* padding-top removed so the dark hero sections can go underneath the transparent header */
+}
