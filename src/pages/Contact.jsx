@@ -76,7 +76,7 @@ const ContactPage = () => {
 
     // CONFIGURATION EMAILJS
     const SERVICE_ID = 'service_g2hecfx';
-    const TEMPLATE_ID = 'template_29uflty';
+    const TEMPLATE_ID = 'template_yuigz1r';
     const PUBLIC_KEY = 'qht7ZC2QvZIAHG1OB';
 
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
