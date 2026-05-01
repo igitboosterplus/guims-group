@@ -11,44 +11,44 @@ import './Contact.css';
 
 const Facebook = ({ size = 24 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
   </svg>
 );
 const Instagram = ({ size = 24 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
   </svg>
 );
 const Linkedin = ({ size = 24 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" />
   </svg>
 );
 const Twitter = ({ size = 24 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
   </svg>
 );
 
 const contactInfo = [
-  { icon: Phone,  label: 'Téléphone',    value: '691 629 244 / 653 307 372', href: 'tel:+237691629244', color: '#1D9845' },
-  { icon: Mail,   label: 'Email',        value: 'contacts@guimsgroup.com',    href: 'mailto:contacts@guimsgroup.com', color: '#2563eb' },
-  { icon: Globe,  label: 'Site Web',     value: 'www.guimsgroup.com',         href: '#', color: '#7c3aed' },
-  { icon: MapPin, label: 'Siège',        value: 'Malangue, Douala – En face du Collège La Conquête', href: '#', color: '#dc2626' },
-  { icon: Clock,  label: 'Disponibilité',value: 'Lun – Sam : 8h00 – 18h00', href: null, color: '#d97706' },
+  { icon: Phone, label: 'Téléphone', value: '691 629 244 / 653 307 372', href: 'tel:+237691629244', color: '#1D9845' },
+  { icon: Mail, label: 'Email', value: 'contacts@guimsgroup.com', href: 'mailto:contacts@guimsgroup.com', color: '#2563eb' },
+  { icon: Globe, label: 'Site Web', value: 'www.guimsgroup.com', href: '#', color: '#7c3aed' },
+  { icon: MapPin, label: 'Siège', value: 'Malangue, Douala – En face du Collège La Conquête', href: '#', color: '#dc2626' },
+  { icon: Clock, label: 'Disponibilité', value: 'Lun – Sam : 8h00 – 18h00', href: null, color: '#d97706' },
 ];
 
 const legalInfo = [
-  { icon: Hash,      label: 'NIU',             value: 'M0326185I5952T' },
-  { icon: Building2, label: 'RCCM',            value: 'CM/DLA/0326/B13/00336' },
-  { icon: FileText,  label: 'Numéro CNPS',     value: '356-0016184-000-G' },
-  { icon: Landmark,  label: 'Compte Bancaire', value: 'CCA Bank : 00281631401' },
+  { icon: Hash, label: 'NIU', value: 'M0326185I5952T' },
+  { icon: Building2, label: 'RCCM', value: 'CM/DLA/0326/B13/00336' },
+  { icon: FileText, label: 'Numéro CNPS', value: '356-0016184-000-G' },
+  { icon: Landmark, label: 'Compte Bancaire', value: 'CCA Bank : 00281631401' },
 ];
 
 const presences = [
   { city: 'Douala (Malangue)', type: 'Siège Principal', note: 'Carrefour Conquête, en face du Collège La Conquête' },
-  { city: 'Douala (Akwa)',     type: 'Représentation',  note: 'Bureau de représentation pour Douala centre' },
-  { city: 'Yaoundé',          type: 'Représentation',  note: 'Bureau de représentation pour la capitale' },
+  { city: 'Douala (Akwa)', type: 'Représentation', note: 'Bureau de représentation pour Douala centre' },
+  { city: 'Yaoundé', type: 'Représentation', note: 'Bureau de représentation pour la capitale' },
 ];
 
 const ContactPage = () => {
@@ -61,7 +61,7 @@ const ContactPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // VERIFICATION: Tous les champs obligatoires sont remplis ?
     if (!form.name || !form.email || !form.subject || !form.message) {
       setStatus('error');
@@ -72,9 +72,9 @@ const ContactPage = () => {
     setStatus(null);
 
     // CONFIGURATION EMAILJS : Remplacez par vos propres IDs
-    const SERVICE_ID = 'YOUR_SERVICE_ID';
-    const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-    const PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+    const SERVICE_ID = '8EZjPOFIF_sWf9Q2Ywlak';
+    const TEMPLATE_ID = 'template_29uflty';
+    const PUBLIC_KEY = 'qht7ZC2QvZIAHG1OB';
 
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
       .then((result) => {
@@ -147,10 +147,10 @@ const ContactPage = () => {
                   <p className="socials-label">Suivez-nous</p>
                   <div className="socials-row">
                     {[
-                      { icon: Facebook,  href: '#', label: 'Facebook' },
-                      { icon: Linkedin,  href: '#', label: 'LinkedIn' },
+                      { icon: Facebook, href: '#', label: 'Facebook' },
+                      { icon: Linkedin, href: '#', label: 'LinkedIn' },
                       { icon: Instagram, href: '#', label: 'Instagram' },
-                      { icon: Twitter,   href: '#', label: 'Twitter' },
+                      { icon: Twitter, href: '#', label: 'Twitter' },
                     ].map(({ icon: Icon, href, label }) => (
                       <a key={label} href={href} target="_blank" rel="noopener noreferrer"
                         className="cs-btn" aria-label={label}>
@@ -164,7 +164,7 @@ const ContactPage = () => {
                 <div className="contact-presences reveal delay-5">
                   <h4 className="pres-title" style={{ color: 'var(--primary)', marginBottom: '8px' }}>Localisation & Présence</h4>
                   <p style={{ fontSize: '0.85rem', color: 'var(--gray-600)', marginBottom: '16px', lineHeight: '1.6' }}>
-                    GUIMS GROUP est localisé au Carrefour Conquête, en face du Collège La Conquête, dans le quartier Malangue, dans la ville de Douala.<br/><br/>
+                    GUIMS GROUP est localisé au Carrefour Conquête, en face du Collège La Conquête, dans le quartier Malangue, dans la ville de Douala.<br /><br />
                     L'entreprise dispose également de représentations à Akwa et dans la ville de Yaoundé, afin d'assurer une proximité et une meilleure réactivité auprès de ses clients et partenaires.
                   </p>
                   {presences.map((p) => (
