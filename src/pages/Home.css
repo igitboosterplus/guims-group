@@ -535,16 +535,19 @@
 }
 
 @media (max-width: 768px) {
-  .hero-title { font-size: clamp(2rem, 8vw, 3rem); }
-  .hero-actions { flex-direction: column; }
+  .hero-title { font-size: clamp(1.8rem, 10vw, 2.5rem); }
+  .hero-actions { flex-direction: column; width: 100%; }
   .hero-actions .btn { width: 100%; justify-content: center; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .stat-item:nth-child(2) { border-right: none; }
-  .stat-item:nth-child(3) { border-right: 1px solid rgba(255,255,255,0.08); }
-  .entities-preview-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .stat-item { border-right: none; padding: 15px 10px; }
+  .stat-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.08); }
+  .entities-preview-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .home-values-grid { grid-template-columns: 1fr; }
   .home-cta-inner { flex-direction: column; text-align: center; }
-  .home-cta-actions { justify-content: center; }
+  .home-cta-actions { justify-content: center; width: 100%; }
+  .home-cta-actions .btn { width: 100%; }
+  .about-card-stack { padding: 0; }
+  .about-card--back { display: none; }
 }
 
 @media (max-width: 480px) {

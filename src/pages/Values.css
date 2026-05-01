@@ -652,13 +652,39 @@
 .values-cta > .container { position: relative; z-index: 1; }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .core-values-grid { grid-template-columns: 1fr; }
-  .mission-grid { grid-template-columns: 1fr; gap: 40px; }
+  .mission-grid { grid-template-columns: 1fr; gap: 48px; }
   .engagements-grid { grid-template-columns: repeat(2, 1fr); }
+  
+  /* Org Chart Responsive */
+  .org-tree-wrapper {
+    overflow-x: auto;
+    padding: 20px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .org-diagram {
+    min-width: 900px; /* Force minimum width to keep tree layout */
+    transform: scale(0.9);
+    transform-origin: top center;
+  }
 }
-@media (max-width: 600px) {
+
+@media (max-width: 768px) {
+  .values-main-quote { font-size: 1.5rem; }
   .engagements-grid { grid-template-columns: 1fr; }
-  .cv-icon-wrap { padding: 24px 24px 16px; }
-  .cv-content { padding: 0 24px 24px; }
+  .org-diagram {
+    transform: scale(0.75);
+  }
+  .mission-blocks { gap: 12px; }
+  .mission-block { padding: 15px; }
 }
+
+@media (max-width: 480px) {
+  .org-diagram {
+    transform: scale(0.6);
+    margin-left: -15%; /* Center adjustment for extreme zoom */
+  }
+  .values-slogan-pills { font-size: 0.75rem; gap: 8px; }
+}
+
