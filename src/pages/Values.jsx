@@ -60,12 +60,12 @@ const coreValues = [
 ];
 
 const engagements = [
-  { icon: Heart,      label: 'Compétence',   desc: 'Des experts qualifiés dans chaque domaine d\'activité.' },
-  { icon: Shield,     label: 'Rigueur',       desc: 'Un suivi méticuleux de chaque étape de vos projets.' },
-  { icon: Users,      label: 'Équipe Dédiée', desc: 'Une équipe pluridisciplinaire à votre service.' },
-  { icon: TrendingUp, label: 'Performance',   desc: 'Des solutions performantes orientées résultats.' },
-  { icon: Globe,      label: 'Vision Africa', desc: 'Construire et digitaliser l\'Afrique de demain.' },
-  { icon: Award,      label: 'Innovation',    desc: 'Toujours à la pointe des meilleures pratiques.' },
+  { icon: Heart, label: 'Compétence', desc: 'Des experts qualifiés dans chaque domaine d\'activité.' },
+  { icon: Shield, label: 'Rigueur', desc: 'Un suivi méticuleux de chaque étape de vos projets.' },
+  { icon: Users, label: 'Équipe Dédiée', desc: 'Une équipe pluridisciplinaire à votre service.' },
+  { icon: TrendingUp, label: 'Performance', desc: 'Des solutions performantes orientées résultats.' },
+  { icon: Globe, label: 'Vision Africa', desc: 'Construire et digitaliser l\'Afrique de demain.' },
+  { icon: Award, label: 'Innovation', desc: 'Toujours à la pointe des meilleures pratiques.' },
 ];
 
 
@@ -234,7 +234,7 @@ const ValuesPage = () => (
           </div>
           <div className="org-tree-wrapper reveal delay-1">
             <div className="org-diagram">
-              
+
               {/* Level 1: DG & Assistante */}
               <div className="od-level od-level-1">
                 <div className="od-assistante-group">
@@ -242,17 +242,17 @@ const ValuesPage = () => (
                     <div className="od-box-header" style={{ background: '#2D754C' }}>
                       <Users size={16} /> ASSISTANTE DE DIRECTION
                     </div>
-                    <div className="od-box-body">Support administratif<br/>et organisationnel</div>
+                    <div className="od-box-body">Support administratif<br />et organisationnel</div>
                   </div>
                   <div className="od-line-h-dotted"></div>
                 </div>
-                
+
                 <div className="od-dg-group">
                   <div className="od-box od-dg">
                     <div className="od-box-header" style={{ background: '#0B2046' }}>
-                      DG<br/>DIRECTEUR GÉNÉRAL
+                      DG<br />DIRECTEUR GÉNÉRAL
                     </div>
-                    <div className="od-box-body" style={{ fontWeight: '800' }}>EMATI NTEKE</div>
+                    <div className="od-box-body" style={{ fontWeight: '800' }}>GUIMTSOP YVANN</div>
                   </div>
                   <div className="od-line-v-dg"></div>
                 </div>
@@ -262,15 +262,15 @@ const ValuesPage = () => (
               <div className="od-level od-level-2">
                 <div className="od-line-h-level2"></div>
                 <div className="od-line-v-center-1"></div>
-                
+
                 <div className="od-level2-branches">
                   <div className="od-branch">
                     <div className="od-line-v-branch"></div>
                     <div className="od-box">
                       <div className="od-box-header" style={{ background: '#0B2046' }}>
-                        <TrendingUp size={16} /> DIRECTEUR ADMINISTRATIF<br/>ET FINANCIER
+                        <TrendingUp size={16} /> DIRECTEUR ADMINISTRATIF<br />ET FINANCIER
                       </div>
-                      <div className="od-box-body" style={{ fontWeight: '800' }}>NDJOME EMMANUEL</div>
+                      <div className="od-box-body" style={{ fontWeight: '800' }}>GUIMTSOP YVANN</div>
                     </div>
                     <div className="od-line-v-sub"></div>
                   </div>
@@ -289,7 +289,7 @@ const ValuesPage = () => (
 
                 {/* Sub-level horizontal line between Compta and Projet */}
                 <div className="od-line-h-sublevel"></div>
-                
+
                 <div className="od-level2-sub-nodes">
                   <div className="od-box od-sub">
                     <div className="od-box-header" style={{ background: '#fff', color: '#2D754C', borderBottom: '1px solid #eee' }}>
@@ -311,12 +311,12 @@ const ValuesPage = () => (
               <div className="od-level od-level-3">
                 <div className="od-line-h-level3"></div>
                 <div className="od-level3-grid">
-                  
+
                   {/* Entity 1 */}
                   <div className="od-entity-col">
                     <div className="od-line-v-entity"></div>
                     <div className="od-box od-entity">
-                      <div className="ode-header">DIRECTION DIGITALE<br/>(DIGITBOOSTER+)</div>
+                      <div className="ode-header">DIRECTION DIGITALE<br />(DIGITBOOSTER+)</div>
                       <div className="ode-resp">RESPONSABLE DIGITAL</div>
                       <div className="ode-list">
                         <ul>
@@ -337,7 +337,7 @@ const ValuesPage = () => (
                   <div className="od-entity-col">
                     <div className="od-line-v-entity"></div>
                     <div className="od-box od-entity">
-                      <div className="ode-header" style={{color: '#2D754C'}}>DIRECTION ÉDUCATION<br/>(GUIMS EDUC)</div>
+                      <div className="ode-header" style={{ color: '#2D754C' }}>DIRECTION ÉDUCATION<br />(GUIMS EDUC)</div>
                       <div className="ode-resp">RESPONSABLE PÉDAGOGIQUE</div>
                       <div className="ode-list">
                         <ul>
@@ -355,7 +355,7 @@ const ValuesPage = () => (
                   <div className="od-entity-col">
                     <div className="od-line-v-entity"></div>
                     <div className="od-box od-entity">
-                      <div className="ode-header" style={{color: '#0B2046'}}>DIRECTION FORMATION<br/>(GUIMS ACADEMY)</div>
+                      <div className="ode-header" style={{ color: '#0B2046' }}>DIRECTION FORMATION<br />(GUIMS ACADEMY)</div>
                       <div className="ode-resp">RESPONSABLE FORMATION</div>
                       <div className="ode-list">
                         <ul>
@@ -373,7 +373,7 @@ const ValuesPage = () => (
                   <div className="od-entity-col">
                     <div className="od-line-v-entity"></div>
                     <div className="od-box od-entity">
-                      <div className="ode-header" style={{color: '#2D754C'}}>DIRECTION AGROBUSINESS<br/>(GABA)</div>
+                      <div className="ode-header" style={{ color: '#2D754C' }}>DIRECTION AGROBUSINESS<br />(GABA)</div>
                       <div className="ode-resp">RESPONSABLE GABA</div>
                       <div className="ode-list">
                         <ul>
@@ -391,7 +391,7 @@ const ValuesPage = () => (
                   <div className="od-entity-col">
                     <div className="od-line-v-entity"></div>
                     <div className="od-box od-entity">
-                      <div className="ode-header" style={{color: '#0B2046'}}>DIRECTION TECHNIQUE<br/>(GUIMSELECT)</div>
+                      <div className="ode-header" style={{ color: '#0B2046' }}>DIRECTION TECHNIQUE<br />(GUIMSELECT)</div>
                       <div className="ode-resp">RESPONSABLE TECHNIQUE</div>
                       <div className="ode-list">
                         <ul>
@@ -409,7 +409,7 @@ const ValuesPage = () => (
                   <div className="od-entity-col">
                     <div className="od-line-v-entity"></div>
                     <div className="od-box od-entity">
-                      <div className="ode-header" style={{color: '#2D754C'}}>DIRECTION COMPTABLE<br/>(GUIMS COMPTA)</div>
+                      <div className="ode-header" style={{ color: '#2D754C' }}>DIRECTION COMPTABLE<br />(GUIMS COMPTA)</div>
                       <div className="ode-resp">RESPONSABLE COMPTABLE</div>
                       <div className="ode-list">
                         <ul>
@@ -427,7 +427,7 @@ const ValuesPage = () => (
                   <div className="od-entity-col">
                     <div className="od-line-v-entity"></div>
                     <div className="od-box od-entity">
-                      <div className="ode-header" style={{color: '#0B2046'}}>DIRECTION CONSULTING<br/>& RH</div>
+                      <div className="ode-header" style={{ color: '#0B2046' }}>DIRECTION CONSULTING<br />& RH</div>
                       <div className="ode-resp">RESPONSABLE CONSULTING & RH</div>
                       <div className="ode-list">
                         <ul>
@@ -450,45 +450,45 @@ const ValuesPage = () => (
                 <div className="od-support-title">SERVICES SUPPORT & ADMINISTRATIFS</div>
                 <div className="od-line-v-support-bottom"></div>
                 <div className="od-line-h-level4-bottom"></div>
-                
+
                 <div className="od-support-grid">
                   <div className="od-support-col">
                     <div className="od-line-v-support-node"></div>
                     <div className="od-box od-support">
-                      <div className="ods-icon"><Users size={20} color="#2D754C"/></div>
+                      <div className="ods-icon"><Users size={20} color="#2D754C" /></div>
                       <div className="ods-text">
                         <strong>SECRÉTARIAT</strong>
-                        <p>Gestion administrative<br/>et communication</p>
+                        <p>Gestion administrative<br />et communication</p>
                       </div>
                     </div>
                   </div>
                   <div className="od-support-col">
                     <div className="od-line-v-support-node"></div>
                     <div className="od-box od-support">
-                      <div className="ods-icon"><Globe size={20} color="#2D754C"/></div>
+                      <div className="ods-icon"><Globe size={20} color="#2D754C" /></div>
                       <div className="ods-text">
                         <strong>SERVICE COMMERCIAL</strong>
-                        <p>Développement commercial<br/>et relation clients</p>
+                        <p>Développement commercial<br />et relation clients</p>
                       </div>
                     </div>
                   </div>
                   <div className="od-support-col">
                     <div className="od-line-v-support-node"></div>
                     <div className="od-box od-support">
-                      <div className="ods-icon"><TrendingUp size={20} color="#2D754C"/></div>
+                      <div className="ods-icon"><TrendingUp size={20} color="#2D754C" /></div>
                       <div className="ods-text">
                         <strong>SERVICE MARKETING</strong>
-                        <p>Promotion, communication<br/>et visibilité</p>
+                        <p>Promotion, communication<br />et visibilité</p>
                       </div>
                     </div>
                   </div>
                   <div className="od-support-col">
                     <div className="od-line-v-support-node"></div>
                     <div className="od-box od-support">
-                      <div className="ods-icon"><Settings size={20} color="#2D754C"/></div>
+                      <div className="ods-icon"><Settings size={20} color="#2D754C" /></div>
                       <div className="ods-text">
                         <strong>SERVICE ADMINISTRATIF</strong>
-                        <p>Gestion des ressources<br/>et moyens généraux</p>
+                        <p>Gestion des ressources<br />et moyens généraux</p>
                       </div>
                     </div>
                   </div>

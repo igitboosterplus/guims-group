@@ -177,10 +177,14 @@
 .hc-entity:last-child { border-bottom: none; }
 
 .hc-entity-icon {
-  width: 28px; height: 28px;
-  border-radius: 6px;
+  width: 42px; height: 42px;
+  border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
+  background: var(--white);
+  padding: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .hc-entity-info {

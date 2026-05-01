@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import { Link } from 'react-router-dom';
 import {
   Phone, Mail, MapPin, Globe, Clock,
@@ -51,6 +52,7 @@ const presences = [
 ];
 
 const ContactPage = () => {
+  const formRef = useRef();
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
   const [status, setStatus] = useState(null); // 'success' | 'error' | null
   const [loading, setLoading] = useState(false);
@@ -59,13 +61,32 @@ const ContactPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // VERIFICATION: Tous les champs obligatoires sont remplis ?
+    if (!form.name || !form.email || !form.subject || !form.message) {
+      setStatus('error');
+      return;
+    }
+
     setLoading(true);
-    // Simulate submission
-    setTimeout(() => {
-      setLoading(false);
-      setStatus('success');
-      setForm({ name: '', email: '', phone: '', subject: '', message: '' });
-    }, 1500);
+    setStatus(null);
+
+    // CONFIGURATION EMAILJS : Remplacez par vos propres IDs
+    const SERVICE_ID = 'YOUR_SERVICE_ID';
+    const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+    const PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
+      .then((result) => {
+        console.log('EmailJS Success:', result.text);
+        setLoading(false);
+        setStatus('success');
+        setForm({ name: '', email: '', phone: '', subject: '', message: '' });
+      }, (error) => {
+        console.log('EmailJS Error:', error.text);
+        setLoading(false);
+        setStatus('error');
+      });
   };
 
   return (
@@ -184,7 +205,7 @@ const ContactPage = () => {
                     </div>
                   )}
 
-                  <form onSubmit={handleSubmit} className="contact-form" id="contact-form" noValidate>
+                  <form ref={formRef} onSubmit={handleSubmit} className="contact-form" id="contact-form" noValidate>
                     <div className="form-row">
                       <div className="form-group">
                         <label htmlFor="contact-name">Nom complet *</label>
