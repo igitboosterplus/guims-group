@@ -75,7 +75,7 @@ const ContactPage = () => {
     setErrorMessage('');
 
     // CONFIGURATION EMAILJS
-    const SERVICE_ID = '8EZjPOFIF_sWf9Q2Ywlak';
+    const SERVICE_ID = 'service_g2hecfx';
     const TEMPLATE_ID = 'template_29uflty';
     const PUBLIC_KEY = 'qht7ZC2QvZIAHG1OB';
 
