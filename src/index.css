@@ -85,6 +85,7 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -140,6 +141,7 @@ input, textarea, select {
 
 .section {
   padding: var(--section-py) 0;
+  overflow: hidden;
 }
 
 .section--light { background: var(--gray-50); }
