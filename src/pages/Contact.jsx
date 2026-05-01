@@ -55,6 +55,7 @@ const ContactPage = () => {
   const formRef = useRef();
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
   const [status, setStatus] = useState(null); // 'success' | 'error' | null
+  const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
@@ -65,13 +66,15 @@ const ContactPage = () => {
     // VERIFICATION: Tous les champs obligatoires sont remplis ?
     if (!form.name || !form.email || !form.subject || !form.message) {
       setStatus('error');
+      setErrorMessage('Veuillez remplir tous les champs obligatoires.');
       return;
     }
 
     setLoading(true);
     setStatus(null);
+    setErrorMessage('');
 
-    // CONFIGURATION EMAILJS : Remplacez par vos propres IDs
+    // CONFIGURATION EMAILJS
     const SERVICE_ID = '8EZjPOFIF_sWf9Q2Ywlak';
     const TEMPLATE_ID = 'template_29uflty';
     const PUBLIC_KEY = 'qht7ZC2QvZIAHG1OB';
@@ -83,9 +86,10 @@ const ContactPage = () => {
         setStatus('success');
         setForm({ name: '', email: '', phone: '', subject: '', message: '' });
       }, (error) => {
-        console.log('EmailJS Error:', error.text);
+        console.log('EmailJS Error:', error);
         setLoading(false);
         setStatus('error');
+        setErrorMessage(error.text || 'Erreur inconnue. Vérifiez vos IDs EmailJS.');
       });
   };
 
@@ -201,7 +205,7 @@ const ContactPage = () => {
                   {status === 'error' && (
                     <div className="form-error">
                       <AlertCircle size={20} />
-                      <span>Une erreur est survenue. Veuillez réessayer.</span>
+                      <span>{errorMessage}</span>
                     </div>
                   )}
 
