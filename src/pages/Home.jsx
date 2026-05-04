@@ -22,13 +22,13 @@ import logoConsulting from '../assets/logos/logo-consulting.png';
 
 /* ── Entity cards for the preview strip ── */
 const entities = [
-  { imgSrc: logoDigibooster, icon: Monitor, name: 'Digitbooster+', color: '#2563eb', bg: '#eff6ff', desc: 'Digital & Communication', websiteUrl: 'https://digitboosterplus.com' },
-  { imgSrc: logoGuimsEduc, icon: BookOpen, name: 'Guims Educ', color: '#7c3aed', bg: '#f5f3ff', desc: 'Éducation & Cours particuliers', websiteUrl: 'https://guimeduc.com' },
-  { imgSrc: logoAcademy, icon: GraduationCap, name: 'Guims Academy', color: '#0891b2', bg: '#ecfeff', desc: 'Formation professionnelle', websiteUrl: 'https://guimacademy.com' },
-  { imgSrc: logoGaba, icon: Leaf, name: 'GABA', color: '#16a34a', bg: '#f0fdf4', desc: 'Agrobusiness', websiteUrl: 'https://gaba.com' },
-  { imgSrc: logoGuimselect, icon: Zap, name: 'GuimsElect', color: '#d97706', bg: '#fffbeb', desc: 'Technologie & Équipements', websiteUrl: 'https://guimselect.com' },
-  { imgSrc: logoCompta, icon: Calculator, name: 'Guims Compta', color: '#dc2626', bg: '#fef2f2', desc: 'Expertise Comptable & Conseil', websiteUrl: 'https://guimcompta.com' },
-  { imgSrc: logoConsulting, icon: Briefcase, name: 'Guims Consulting', color: '#0B2046', bg: '#f0f4ff', desc: 'Conseil & Stratégie', websiteUrl: 'https://guimconsulting.com' },
+  { id: 'digitbooster', imgSrc: logoDigibooster, icon: Monitor, name: 'Digitbooster+', color: '#2563eb', bg: '#eff6ff', desc: 'Digital & Communication' },
+  { id: 'guims-educ', imgSrc: logoGuimsEduc, icon: BookOpen, name: 'Guims Educ', color: '#7c3aed', bg: '#f5f3ff', desc: 'Éducation & Cours particuliers' },
+  { id: 'guims-academy', imgSrc: logoAcademy, icon: GraduationCap, name: 'Guims Academy', color: '#0891b2', bg: '#ecfeff', desc: 'Formation professionnelle' },
+  { id: 'gaba', imgSrc: logoGaba, icon: Leaf, name: 'GABA', color: '#16a34a', bg: '#f0fdf4', desc: 'Agrobusiness' },
+  { id: 'guimselect', imgSrc: logoGuimselect, icon: Zap, name: 'GuimsElect', color: '#d97706', bg: '#fffbeb', desc: 'Technologie & Équipements' },
+  { id: 'guims-compta', imgSrc: logoCompta, icon: Calculator, name: 'Guims Compta', color: '#dc2626', bg: '#fef2f2', desc: 'Expertise Comptable & Conseil' },
+  { id: 'guims-consulting', imgSrc: logoConsulting, icon: Briefcase, name: 'Guims Consulting', color: '#0B2046', bg: '#f0f4ff', desc: 'Conseil & Stratégie' },
 ];
 
 /* ── Values for home preview ── */
@@ -133,11 +133,9 @@ const HomePage = () => {
               <div className="hero-card-body">
                 <div className="hc-label">Nos 7 Entités</div>
                 {entities.map((e, i) => (
-                  <a 
+                  <Link 
                     key={e.name} 
-                    href={e.websiteUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+                    to={`/entites#entity-${e.id}`} 
                     className="hc-entity" 
                     style={{ '--delay': `${i * 0.1}s`, textDecoration: 'none', display: 'flex' }}
                   >
@@ -155,7 +153,7 @@ const HomePage = () => {
                     <div className="hc-entity-bar">
                       <div className="hc-entity-fill" style={{ width: `${75 + i * 3}%`, background: e.color }} />
                     </div>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -291,11 +289,9 @@ const HomePage = () => {
 
             <div className="entities-preview-grid">
               {entities.map((entity, i) => (
-                <a
+                <Link
                   key={entity.name}
-                  href={entity.websiteUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  to={`/entites#entity-${entity.id}`}
                   className={`entity-preview-card reveal delay-${(i % 4) + 1}`}
                   style={{ textDecoration: 'none', display: 'block' }}
                 >
@@ -310,7 +306,7 @@ const HomePage = () => {
                   <h3 className="epc-name">{entity.name}</h3>
                   <p className="epc-desc">{entity.desc}</p>
                   <div className="epc-arrow" style={{ color: entity.color }}>›</div>
-                </a>
+                </Link>
               ))}
             </div>
 

@@ -11,10 +11,23 @@ import ValuesPage    from './pages/Values';
 import ResourcesPage from './pages/Resources';
 import ContactPage   from './pages/Contact';
 
-/* Scroll window to top on every route change */
+/* Scroll window to top or to hash element on every route change */
 const RouteScrollReset = () => {
-  const { pathname } = useLocation();
-  React.useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  const { pathname, hash } = useLocation();
+  React.useEffect(() => {
+    if (!hash) {
+      window.scrollTo(0, 0);
+    } else {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        // Delay slightly to ensure content is rendered
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [pathname, hash]);
   return null;
 };
 

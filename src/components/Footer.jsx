@@ -155,7 +155,7 @@ const Footer = () => {
                   <div className="contact-icon"><Phone size={14} /></div>
                   <div>
                     <span className="contact-label">Téléphone</span>
-                    <a href="tel:+237691629244" className="contact-value">691 62 92 44 / 653 30 73 72</a>
+                    <a href="tel:+237691629244" className="contact-value">696 29 99 16</a>
                   </div>
                 </li>
                 <li className="footer-contact-item">
