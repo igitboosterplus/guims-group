@@ -552,5 +552,7 @@
 
 @media (max-width: 480px) {
   .entities-preview-grid { grid-template-columns: 1fr; }
-  .about-infra { grid-template-columns: repeat(3, 1fr); }
+  .about-infra { grid-template-columns: 1fr; gap: 24px; }
+  .presence-item { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .presence-dot { margin-top: 6px; }
 }
