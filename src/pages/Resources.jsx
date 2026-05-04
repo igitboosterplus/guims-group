@@ -17,6 +17,7 @@ import heroImg from '../assets/resources/hero-office-final.png';
 import teamImg from '../assets/resources/team.png';
 import handshakeImg from '../assets/resources/handshake.png';
 
+import { Helmet } from 'react-helmet-async';
 import './Resources.css';
 
 const hardware = [
@@ -147,6 +148,11 @@ const atouts = [
 
 const ResourcesPage = () => (
   <div className="resources-page">
+    <Helmet>
+      <title>Nos Ressources | GUIMS GROUP - Infrastructure, Tech & Équipe</title>
+      <meta name="description" content="Découvrez les moyens techniques et humains de GUIMS GROUP : parc informatique 4K, fibre optique, équipe pluridisciplinaire et infrastructure moderne à Douala." />
+      <link rel="canonical" href="https://guimsgroup.com/ressources" />
+    </Helmet>
     <div className="page-bg-pattern"></div>
     {/* ── HERO SECTION ── */}
     <div className="resources-hero">

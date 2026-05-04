@@ -6,6 +6,7 @@ import {
   CheckCircle, ArrowRight, Quote, Settings, Calculator
 } from 'lucide-react';
 import RevealSection from '../components/RevealSection';
+import { Helmet } from 'react-helmet-async';
 import './Values.css';
 
 const coreValues = [
@@ -72,6 +73,11 @@ const engagements = [
 
 const ValuesPage = () => (
   <div className="values-page">
+    <Helmet>
+      <title>Valeurs & Mission | GUIMS GROUP - Excellence, Innovation, Intégrité</title>
+      <meta name="description" content="Découvrez l'ADN de GUIMS GROUP : nos 4 valeurs fondamentales (Excellence, Innovation, Intégrité, Impact) et notre mission pour digitaliser l'Afrique." />
+      <link rel="canonical" href="https://guimsgroup.com/valeurs" />
+    </Helmet>
     {/* Page Hero */}
     <div className="page-hero">
       <div className="container page-hero-content">
@@ -252,7 +258,7 @@ const ValuesPage = () => (
                     <div className="od-box-header" style={{ background: '#0B2046' }}>
                       DG<br />DIRECTEUR GÉNÉRAL
                     </div>
-                    <div className="od-box-body" style={{ fontWeight: '800' }}>GUIMTSOP YVANN</div>
+                    <div className="od-box-body" style={{ fontWeight: '800' }}></div>
                   </div>
                   <div className="od-line-v-dg"></div>
                 </div>
@@ -270,7 +276,7 @@ const ValuesPage = () => (
                       <div className="od-box-header" style={{ background: '#0B2046' }}>
                         <TrendingUp size={16} /> DIRECTEUR ADMINISTRATIF<br />ET FINANCIER
                       </div>
-                      <div className="od-box-body" style={{ fontWeight: '800' }}>GUIMTSOP YVANN</div>
+                      <div className="od-box-body" style={{ fontWeight: '800' }}></div>
                     </div>
                     <div className="od-line-v-sub"></div>
                   </div>
@@ -281,7 +287,7 @@ const ValuesPage = () => (
                       <div className="od-box-header" style={{ background: '#0B2046' }}>
                         <Settings size={16} /> DIRECTEUR TECHNIQUE
                       </div>
-                      <div className="od-box-body" style={{ fontWeight: '800' }}>CEVERIN WOUETCHOUA</div>
+                      <div className="od-box-body" style={{ fontWeight: '800' }}></div>
                     </div>
                     <div className="od-line-v-sub"></div>
                   </div>
@@ -295,13 +301,13 @@ const ValuesPage = () => (
                     <div className="od-box-header" style={{ background: '#fff', color: '#2D754C', borderBottom: '1px solid #eee' }}>
                       <Calculator size={16} /> COMPTABILITÉ
                     </div>
-                    <div className="od-box-body" style={{ fontWeight: '700' }}>BUCHA PAMELA</div>
+                    <div className="od-box-body" style={{ fontWeight: '700' }}></div>
                   </div>
                   <div className="od-box od-sub">
                     <div className="od-box-header" style={{ background: '#fff', color: '#2D754C', borderBottom: '1px solid #eee' }}>
                       <Users size={16} /> CHEF DE PROJET
                     </div>
-                    <div className="od-box-body" style={{ fontWeight: '700' }}>PROSPER MAHOU</div>
+                    <div className="od-box-body" style={{ fontWeight: '700' }}></div>
                   </div>
                 </div>
                 <div className="od-line-v-center-2"></div>

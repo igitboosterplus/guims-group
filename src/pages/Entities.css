@@ -53,12 +53,18 @@
   border: 1px solid var(--gray-200);
   box-shadow: var(--shadow-card);
   overflow: hidden;
-  transition: var(--transition-slow);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
-.entity-card:hover {
+.entity-card--active {
+  box-shadow: var(--shadow-xl);
+  border-color: var(--gray-300);
+}
+
+.entity-card:not(.entity-card--active):hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-xl);
 }
@@ -125,12 +131,39 @@
 
 /* Description */
 .ec-description {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--gray-600);
-  line-height: 1.75;
-  margin-bottom: 24px;
-  padding-bottom: 24px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Actions */
+.ec-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
   border-bottom: 1px solid var(--gray-100);
+}
+
+.ec-extra-info {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Services */

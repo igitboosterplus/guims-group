@@ -7,6 +7,7 @@ import {
   Users, Target, Star, CheckCircle,
 } from 'lucide-react';
 import RevealSection from '../components/RevealSection';
+import { Helmet } from 'react-helmet-async';
 import './Entities.css';
 
 const entities = [
@@ -38,6 +39,7 @@ const entities = [
       'Traffic Managers',
     ],
     impact: 'Nous créons et maintenons des solutions fiables et performantes.',
+    websiteUrl: 'https://digitboosterplus.com',
   },
   {
     id: 'guims-educ',
@@ -64,6 +66,7 @@ const entities = [
       'Chargés du Suivi des Élèves',
     ],
     impact: 'Une qualité pédagogique garantie pour chaque apprenant.',
+    websiteUrl: 'https://guimeduc.com',
   },
   {
     id: 'guims-academy',
@@ -90,6 +93,7 @@ const entities = [
       'Coordinateurs Formation',
     ],
     impact: 'Des compétences concrètes, un impact immédiat sur votre carrière.',
+    websiteUrl: 'https://guimacademy.com',
   },
   {
     id: 'gaba',
@@ -116,6 +120,7 @@ const entities = [
       'Conseillers en Production',
     ],
     impact: 'Nous valorisons les ressources agricoles pour une production durable.',
+    websiteUrl: 'https://gaba.com',
   },
   {
     id: 'guimselect',
@@ -141,6 +146,7 @@ const entities = [
       'Gestionnaires de Matériel',
     ],
     impact: 'Vos équipements toujours opérationnels, vos projets jamais interrompus.',
+    websiteUrl: 'https://guimselect.com',
   },
   {
     id: 'guims-compta',
@@ -167,6 +173,7 @@ const entities = [
       'Conseillers en Gestion',
     ],
     impact: 'Vos finances en ordre, votre développement assuré.',
+    websiteUrl: 'https://guimcompta.com',
   },
   {
     id: 'guims-consulting',
@@ -193,17 +200,21 @@ const entities = [
       'Gestionnaires RH',
     ],
     impact: 'Votre succès est notre mission. Construisons ensemble un avenir meilleur.',
+    websiteUrl: 'https://guimconsulting.com',
   },
 ];
 
 const EntityCard = ({ entity, index }) => {
-  const [expanded, setExpanded] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
+  const [expandedTeam, setExpandedTeam] = useState(false);
   const Icon = entity.icon;
 
   return (
     <div
-      className={`entity-card reveal delay-${(index % 3) + 1}`}
+      className={`entity-card reveal delay-${(index % 3) + 1} ${showDetails ? 'entity-card--active' : ''}`}
       id={`entity-${entity.id}`}
+      onClick={() => !showDetails && setShowDetails(true)}
+      style={{ cursor: showDetails ? 'default' : 'pointer' }}
     >
       {/* Card top accent */}
       <div className="ec-top-bar" style={{ background: entity.gradient }} />
@@ -223,56 +234,36 @@ const EntityCard = ({ entity, index }) => {
           <div className="ec-title-group">
             <span className="ec-subtitle" style={{ color: entity.color }}>{entity.subtitle}</span>
             <h2 className="ec-name">{entity.name}</h2>
-            <p className="ec-tagline">{entity.tagline}</p>
           </div>
         </div>
 
-        {/* Description */}
-        <p className="ec-description">{entity.description}</p>
-
-        {/* Services */}
-        <div className="ec-services">
-          <h4 className="ec-section-label">Nos services</h4>
-          <ul className="ec-service-list">
-            {entity.services.map((s) => (
-              <li key={s} className="ec-service-item">
-                <CheckCircle size={14} style={{ color: entity.color, flexShrink: 0 }} />
-                <span>{s}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Toggle team */}
-        <button
-          className="ec-toggle"
-          onClick={() => setExpanded(!expanded)}
-          style={{ color: entity.color, borderColor: `${entity.color}33` }}
-          aria-expanded={expanded}
-        >
-          <Users size={15} />
-          <span>Notre équipe</span>
-          {expanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
-        </button>
-
-        {expanded && (
-          <div className="ec-team">
-            <div className="ec-team-grid">
-              {entity.team.map((t) => (
-                <div key={t} className="ec-team-item" style={{ background: entity.bg, color: entity.color }}>
-                  <Star size={11} />
-                  <span>{t}</span>
-                </div>
-              ))}
+        {/* Description & Voir Plus */}
+        {showDetails && (
+          <div className="ec-details-content animate-fade-in">
+            <p className="ec-tagline" style={{ marginBottom: '12px', fontWeight: '600' }}>{entity.tagline}</p>
+            <p className="ec-description">{entity.description}</p>
+            
+            <div className="ec-actions">
+              <a 
+                href={entity.websiteUrl} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn btn--primary btn--sm"
+                style={{ background: entity.color, border: 'none' }}
+              >
+                Voir plus
+                <ArrowRight size={14} style={{ marginLeft: '6px' }} />
+              </a>
+              <button 
+                className="btn btn--text btn--sm" 
+                onClick={(e) => { e.stopPropagation(); setShowDetails(false); }}
+                style={{ color: 'var(--gray-500)', fontSize: '0.8rem' }}
+              >
+                Fermer
+              </button>
             </div>
           </div>
         )}
-
-        {/* Impact badge */}
-        <div className="ec-impact" style={{ borderColor: `${entity.color}33`, background: entity.bg }}>
-          <Target size={14} style={{ color: entity.color, flexShrink: 0 }} />
-          <p style={{ color: entity.color }}><strong>Impact client :</strong> {entity.impact}</p>
-        </div>
       </div>
     </div>
   );
@@ -280,6 +271,11 @@ const EntityCard = ({ entity, index }) => {
 
 const EntitiesPage = () => (
   <div className="entities-page">
+    <Helmet>
+      <title>Nos Entités | GUIMS GROUP - Digital, Éducation, Agrobusiness, Formation</title>
+      <meta name="description" content="Découvrez les 7 filiales de GUIMS GROUP : Digitbooster+, Guims Academy, GABA, Guims Compta, et plus encore. Des pôles d'excellence pour l'Afrique." />
+      <link rel="canonical" href="https://guimsgroup.com/entites" />
+    </Helmet>
     {/* Page Hero */}
     <div className="page-hero">
       <div className="container page-hero-content">

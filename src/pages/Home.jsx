@@ -8,6 +8,7 @@ import {
   Award, Users, TrendingUp, Globe,
 } from 'lucide-react';
 import RevealSection from '../components/RevealSection';
+import { Helmet } from 'react-helmet-async';
 import './Home.css';
 
 // Logo Imports
@@ -21,13 +22,13 @@ import logoConsulting from '../assets/logos/logo-consulting.png';
 
 /* ── Entity cards for the preview strip ── */
 const entities = [
-  { imgSrc: logoDigibooster, icon: Monitor, name: 'Digitbooster+', color: '#2563eb', bg: '#eff6ff', desc: 'Digital & Communication' },
-  { imgSrc: logoGuimsEduc, icon: BookOpen, name: 'Guims Educ', color: '#7c3aed', bg: '#f5f3ff', desc: 'Éducation & Cours particuliers' },
-  { imgSrc: logoAcademy, icon: GraduationCap, name: 'Guims Academy', color: '#0891b2', bg: '#ecfeff', desc: 'Formation professionnelle' },
-  { imgSrc: logoGaba, icon: Leaf, name: 'GABA', color: '#16a34a', bg: '#f0fdf4', desc: 'Agrobusiness' },
-  { imgSrc: logoGuimselect, icon: Zap, name: 'GuimsElect', color: '#d97706', bg: '#fffbeb', desc: 'Technologie & Équipements' },
-  { imgSrc: logoCompta, icon: Calculator, name: 'Guims Compta', color: '#dc2626', bg: '#fef2f2', desc: 'Expertise Comptable & Conseil' },
-  { imgSrc: logoConsulting, icon: Briefcase, name: 'Guims Consulting', color: '#0B2046', bg: '#f0f4ff', desc: 'Conseil & Stratégie' },
+  { imgSrc: logoDigibooster, icon: Monitor, name: 'Digitbooster+', color: '#2563eb', bg: '#eff6ff', desc: 'Digital & Communication', websiteUrl: 'https://digitboosterplus.com' },
+  { imgSrc: logoGuimsEduc, icon: BookOpen, name: 'Guims Educ', color: '#7c3aed', bg: '#f5f3ff', desc: 'Éducation & Cours particuliers', websiteUrl: 'https://guimeduc.com' },
+  { imgSrc: logoAcademy, icon: GraduationCap, name: 'Guims Academy', color: '#0891b2', bg: '#ecfeff', desc: 'Formation professionnelle', websiteUrl: 'https://guimacademy.com' },
+  { imgSrc: logoGaba, icon: Leaf, name: 'GABA', color: '#16a34a', bg: '#f0fdf4', desc: 'Agrobusiness', websiteUrl: 'https://gaba.com' },
+  { imgSrc: logoGuimselect, icon: Zap, name: 'GuimsElect', color: '#d97706', bg: '#fffbeb', desc: 'Technologie & Équipements', websiteUrl: 'https://guimselect.com' },
+  { imgSrc: logoCompta, icon: Calculator, name: 'Guims Compta', color: '#dc2626', bg: '#fef2f2', desc: 'Expertise Comptable & Conseil', websiteUrl: 'https://guimcompta.com' },
+  { imgSrc: logoConsulting, icon: Briefcase, name: 'Guims Consulting', color: '#0B2046', bg: '#f0f4ff', desc: 'Conseil & Stratégie', websiteUrl: 'https://guimconsulting.com' },
 ];
 
 /* ── Values for home preview ── */
@@ -67,6 +68,11 @@ const HomePage = () => {
 
   return (
     <div className="home-page">
+      <Helmet>
+        <title>GUIMS GROUP - Accueil | Construire • Former • Digitaliser l'Afrique</title>
+        <meta name="description" content="Bienvenue chez GUIMS GROUP, groupe multisectoriel basé à Douala. Découvrez nos filiales en digital, éducation, formation et agrobusiness." />
+        <link rel="canonical" href="https://guimsgroup.com/" />
+      </Helmet>
 
       {/* ══════════════════════════════════════════
           HERO SECTION
@@ -129,7 +135,7 @@ const HomePage = () => {
                 {entities.map((e, i) => (
                   <a 
                     key={e.name} 
-                    href="https://www.digitboosterplus.com/" 
+                    href={e.websiteUrl} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="hc-entity" 
@@ -287,7 +293,7 @@ const HomePage = () => {
               {entities.map((entity, i) => (
                 <a
                   key={entity.name}
-                  href="https://www.digitboosterplus.com/"
+                  href={entity.websiteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`entity-preview-card reveal delay-${(i % 4) + 1}`}
