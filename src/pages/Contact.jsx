@@ -32,7 +32,7 @@ const Twitter = ({ size = 24 }) => (
 );
 
 const contactInfo = [
-  { icon: Phone, label: 'Téléphone', value: '691 62 92 44 / 653 30 73 72', href: 'tel:+237691629244', color: '#1D9845' },
+  { icon: Phone, label: 'Téléphone', value: '696 29 99 16', href: 'tel:+237696299916', color: '#1D9845' },
   { icon: Mail, label: 'Email', value: 'contacts@guimsgroup.com', href: 'mailto:contacts@guimsgroup.com', color: '#2563eb' },
   { icon: Globe, label: 'Site Web', value: 'www.guimsgroup.com', href: '#', color: '#7c3aed' },
   { icon: MapPin, label: 'Siège', value: 'Malangue, Douala – En face du Collège La Conquête', href: '#', color: '#dc2626' },
@@ -98,7 +98,7 @@ const ContactPage = () => {
     <div className="contact-page">
       <Helmet>
         <title>Contactez-Nous | GUIMS GROUP - Douala, Cameroun</title>
-        <meta name="description" content="Une question ? Un projet ? Contactez GUIMS GROUP à Douala. Téléphone : 691 62 92 44. Email : contacts@guimsgroup.com. Localisation : Malangue." />
+        <meta name="description" content="Une question ? Un projet ? Contactez GUIMS GROUP à Douala. Téléphone : 696 29 99 16. Email : contacts@guimsgroup.com. Localisation : Malangue." />
         <link rel="canonical" href="https://guimsgroup.com/contact" />
       </Helmet>
       {/* Page Hero */}
