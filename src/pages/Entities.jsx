@@ -205,16 +205,13 @@ const entities = [
 ];
 
 const EntityCard = ({ entity, index }) => {
-  const [showDetails, setShowDetails] = useState(false);
-  const [expandedTeam, setExpandedTeam] = useState(false);
+  const [expanded, setExpanded] = useState(false);
   const Icon = entity.icon;
 
   return (
     <div
-      className={`entity-card reveal delay-${(index % 3) + 1} ${showDetails ? 'entity-card--active' : ''}`}
+      className={`entity-card reveal delay-${(index % 3) + 1}`}
       id={`entity-${entity.id}`}
-      onClick={() => !showDetails && setShowDetails(true)}
-      style={{ cursor: showDetails ? 'default' : 'pointer' }}
     >
       {/* Card top accent */}
       <div className="ec-top-bar" style={{ background: entity.gradient }} />
@@ -234,36 +231,68 @@ const EntityCard = ({ entity, index }) => {
           <div className="ec-title-group">
             <span className="ec-subtitle" style={{ color: entity.color }}>{entity.subtitle}</span>
             <h2 className="ec-name">{entity.name}</h2>
+            <p className="ec-tagline">{entity.tagline}</p>
           </div>
         </div>
 
         {/* Description & Voir Plus */}
-        {showDetails && (
-          <div className="ec-details-content animate-fade-in">
-            <p className="ec-tagline" style={{ marginBottom: '12px', fontWeight: '600' }}>{entity.tagline}</p>
-            <p className="ec-description">{entity.description}</p>
-            
-            <div className="ec-actions">
-              <a 
-                href={entity.websiteUrl} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn btn--primary btn--sm"
-                style={{ background: entity.color, border: 'none' }}
-              >
-                Voir plus
-                <ArrowRight size={14} style={{ marginLeft: '6px' }} />
-              </a>
-              <button 
-                className="btn btn--text btn--sm" 
-                onClick={(e) => { e.stopPropagation(); setShowDetails(false); }}
-                style={{ color: 'var(--gray-500)', fontSize: '0.8rem' }}
-              >
-                Fermer
-              </button>
+        <div className="ec-description-wrap">
+          <p className="ec-description">{entity.description}</p>
+          <a 
+            href={entity.websiteUrl} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn btn--primary btn--sm"
+            style={{ background: entity.color, border: 'none', marginBottom: '24px', width: 'fit-content' }}
+          >
+            Voir plus
+            <ArrowRight size={14} style={{ marginLeft: '6px' }} />
+          </a>
+        </div>
+
+        {/* Services */}
+        <div className="ec-services">
+          <h4 className="ec-section-label">Nos services</h4>
+          <ul className="ec-service-list">
+            {entity.services.map((s) => (
+              <li key={s} className="ec-service-item">
+                <CheckCircle size={14} style={{ color: entity.color, flexShrink: 0 }} />
+                <span>{s}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Toggle team */}
+        <button
+          className="ec-toggle"
+          onClick={() => setExpanded(!expanded)}
+          style={{ color: entity.color, borderColor: `${entity.color}33` }}
+          aria-expanded={expanded}
+        >
+          <Users size={15} />
+          <span>Notre équipe</span>
+          {expanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+        </button>
+
+        {expanded && (
+          <div className="ec-team">
+            <div className="ec-team-grid">
+              {entity.team.map((t) => (
+                <div key={t} className="ec-team-item" style={{ background: entity.bg, color: entity.color }}>
+                  <Star size={11} />
+                  <span>{t}</span>
+                </div>
+              ))}
             </div>
           </div>
         )}
+
+        {/* Impact badge */}
+        <div className="ec-impact" style={{ borderColor: `${entity.color}33`, background: entity.bg }}>
+          <Target size={14} style={{ color: entity.color, flexShrink: 0 }} />
+          <p style={{ color: entity.color }}><strong>Impact client :</strong> {entity.impact}</p>
+        </div>
       </div>
     </div>
   );
