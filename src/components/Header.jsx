@@ -26,7 +26,6 @@ const Header = () => {
   // Close mobile menu on route change
   useEffect(() => {
     setMenuOpen(false);
-    window.scrollTo(0, 0);
   }, [location.pathname]);
 
   const headerClass = [

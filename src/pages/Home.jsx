@@ -135,7 +135,7 @@ const HomePage = () => {
                 {entities.map((e, i) => (
                   <Link 
                     key={e.name} 
-                    to={`/entites#entity-${e.id}`} 
+                    to="/entites" 
                     className="hc-entity" 
                     style={{ '--delay': `${i * 0.1}s`, textDecoration: 'none', display: 'flex' }}
                   >
@@ -291,7 +291,7 @@ const HomePage = () => {
               {entities.map((entity, i) => (
                 <Link
                   key={entity.name}
-                  to={`/entites#entity-${entity.id}`}
+                  to="/entites"
                   className={`entity-preview-card reveal delay-${(i % 4) + 1}`}
                   style={{ textDecoration: 'none', display: 'block' }}
                 >

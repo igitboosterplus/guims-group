@@ -66,7 +66,7 @@ const entities = [
       'Chargés du Suivi des Élèves',
     ],
     impact: 'Une qualité pédagogique garantie pour chaque apprenant.',
-    websiteUrl: 'https://guimeduc.com',
+    websiteUrl: 'https://guimseduc.org',
   },
   {
     id: 'guims-academy',
@@ -93,7 +93,7 @@ const entities = [
       'Coordinateurs Formation',
     ],
     impact: 'Des compétences concrètes, un impact immédiat sur votre carrière.',
-    websiteUrl: 'https://guimacademy.com',
+    websiteUrl: 'https://guimsacademy.com',
   },
   {
     id: 'gaba',
@@ -173,7 +173,7 @@ const entities = [
       'Conseillers en Gestion',
     ],
     impact: 'Vos finances en ordre, votre développement assuré.',
-    websiteUrl: 'https://guimcompta.com',
+    websiteUrl: 'https://guimscompta.com',
   },
   {
     id: 'guims-consulting',
@@ -200,7 +200,7 @@ const entities = [
       'Gestionnaires RH',
     ],
     impact: 'Votre succès est notre mission. Construisons ensemble un avenir meilleur.',
-    websiteUrl: 'https://guimconsulting.com',
+    websiteUrl: 'https://guimsconsulting.com',
   },
 ];
 
@@ -238,10 +238,10 @@ const EntityCard = ({ entity, index }) => {
         {/* Description & Voir Plus */}
         <div className="ec-description-wrap">
           <p className="ec-description">{entity.description}</p>
-          <a 
-            href={entity.websiteUrl} 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <a
+            href={entity.websiteUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn btn--primary btn--sm"
             style={{ background: entity.color, border: 'none', marginBottom: '24px', width: 'fit-content' }}
           >
