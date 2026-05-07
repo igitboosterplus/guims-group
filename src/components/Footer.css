@@ -63,32 +63,10 @@
   margin-bottom: 20px;
 }
 
-.footer-logo-icon {
-  width: 44px;
-  height: 44px;
-  color: var(--secondary);
-  flex-shrink: 0;
-}
-
-.footer-logo-name {
-  font-family: var(--font-heading);
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--white);
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
-.footer-logo-name em {
-  font-style: normal;
-  color: var(--secondary-light);
-}
-
-.footer-logo-tagline {
-  font-size: 0.65rem;
-  font-style: italic;
-  color: rgba(255,255,255,0.5);
-  margin-top: 2px;
+.footer-logo-img {
+  max-width: 180px;
+  height: auto;
+  display: block;
 }
 
 .footer-brand-desc {

@@ -19,6 +19,7 @@ import logoGaba from '../assets/logos/logo-gaba.png';
 import logoGuimselect from '../assets/logos/logo-guimselect.png';
 import logoCompta from '../assets/logos/logo-compta.png';
 import logoConsulting from '../assets/logos/logo-consulting.png';
+import officeImg from '../assets/office-guims.jpg';
 
 /* ── Entity cards for the preview strip ── */
 const entities = [
@@ -78,12 +79,10 @@ const HomePage = () => {
           HERO SECTION
       ══════════════════════════════════════════ */}
       <section className="hero" ref={heroRef} id="hero">
-        {/* Background layers */}
         <div className="hero-bg">
           <div className="hero-bg-grid" />
           <div className="hero-bg-blob hero-bg-blob--1" />
           <div className="hero-bg-blob hero-bg-blob--2" />
-          <div className="hero-bg-blob hero-bg-blob--3" />
         </div>
 
         <div className="container hero-content">
@@ -99,79 +98,32 @@ const HomePage = () => {
             </h1>
 
             <p className="hero-subtitle">
-              GUIMS GROUP est un groupe multisectoriel qui réunit des experts passionnés pour offrir des solutions innovantes, adaptées et orientées résultats. Nous accompagnons les entreprises, institutions et particuliers dans leurs projets à travers un écosystème de compétences complémentaires.
+              GUIMS GROUP est un groupe multisectoriel qui réunit des experts passionnés pour offrir des solutions innovantes, adaptées et orientées résultats.
             </p>
 
-            <div className="hero-slogan">
-              <span>Construire</span>
-              <span className="sep">•</span>
-              <span>Former</span>
-              <span className="sep">•</span>
-              <span>Digitaliser L'Afrique</span>
-            </div>
-
             <div className="hero-actions">
-              <Link to="/entites" className="btn btn--primary btn--lg" id="hero-discover-btn">
+              <Link to="/entites" className="btn btn--primary btn--lg">
                 Découvrir nos entités
                 <ArrowRight size={18} />
               </Link>
-              <Link to="/contact" className="btn btn--secondary btn--lg" id="hero-contact-btn">
+              <Link to="/contact" className="btn btn--secondary btn--lg">
                 Nous contacter
               </Link>
             </div>
           </div>
 
-          {/* Hero visual card */}
           <div className="hero-visual">
-            <div className="hero-card glass">
-              <div className="hero-card-header">
-                <div className="hc-dot hc-dot--r" />
-                <div className="hc-dot hc-dot--y" />
-                <div className="hc-dot hc-dot--g" />
-                <span>GUIMS GROUP — Vue d'ensemble</span>
+            <div className="hero-image-card">
+              <img src={officeImg} alt="Équipe GUIMS GROUP" className="hero-img" />
+              <div className="hero-image-tag glass">
+                <Shield size={14} />
+                <span>Siège Social, Douala</span>
               </div>
-              <div className="hero-card-body">
-                <div className="hc-label">Nos 7 Entités</div>
-                {entities.map((e, i) => (
-                  <Link 
-                    key={e.name} 
-                    to="/entites" 
-                    className="hc-entity" 
-                    style={{ '--delay': `${i * 0.1}s`, textDecoration: 'none', display: 'flex' }}
-                  >
-                    <div className="hc-entity-icon" style={!e.imgSrc ? { background: e.bg, color: e.color } : {}}>
-                      {e.imgSrc ? (
-                        <img src={e.imgSrc} alt={e.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                      ) : (
-                        <e.icon size={14} />
-                      )}
-                    </div>
-                    <div className="hc-entity-info">
-                      <span className="hc-entity-name">{e.name}</span>
-                      <span className="hc-entity-desc">{e.desc}</span>
-                    </div>
-                    <div className="hc-entity-bar">
-                      <div className="hc-entity-fill" style={{ width: `${75 + i * 3}%`, background: e.color }} />
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Floating badges */}
-            <div className="hero-badge-float hero-badge-float--1 glass">
-              <Shield size={16} className="float-icon" />
-              <span>Certifié & Enregistré</span>
-            </div>
-            <div className="hero-badge-float hero-badge-float--2 glass">
-              <MapPinIcon />
-              <span>Douala, Cameroun</span>
             </div>
           </div>
         </div>
 
-        {/* Scroll cue */}
-        <button className="hero-scroll-cue" onClick={scrollToNext} aria-label="Défiler vers le bas">
+        <button className="hero-scroll-cue" onClick={scrollToNext} aria-label="Suivant">
           <ChevronDown size={22} />
         </button>
       </section>
@@ -225,43 +177,38 @@ const HomePage = () => {
               </div>
 
               <div className="about-visual reveal-right delay-2">
-                <div className="about-card-stack">
-                  <div className="about-card about-card--back" />
-                  <div className="about-card about-card--main">
-                    <div className="about-card-content">
-                      <div className="about-presence">
-                        <h4>Notre Présence</h4>
-                        <div className="presence-item">
-                          <div className="presence-dot presence-dot--main" />
-                          <span>Siège : Malangue – Douala</span>
-                        </div>
-                        <div className="presence-item">
-                          <div className="presence-dot" />
-                          <span>Représentation : Akwa – Douala</span>
-                        </div>
-                        <div className="presence-item">
-                          <div className="presence-dot" />
-                          <span>Représentation : Yaoundé</span>
-                        </div>
+                <div className="about-presence-card card">
+                  <div className="apc-header">
+                    <Globe size={24} color="var(--secondary)" />
+                    <h4>Notre Présence</h4>
+                  </div>
+                  <div className="apc-body">
+                    <div className="presence-item">
+                      <div className="presence-dot presence-dot--main" />
+                      <div className="presence-text">
+                        <strong>Siège Social</strong>
+                        <span>Malangue – Douala</span>
                       </div>
-                      <div className="about-infra">
-                        <div className="infra-item">
-                          <Users size={20} color="var(--primary)" />
-                          <div className="infra-label"><strong>UNE ÉQUIPE</strong><br />D'EXPERTS<br />PLURIDISCIPLINAIRES</div>
-                        </div>
-                        <div className="infra-item">
-                          <Lightbulb size={20} color="var(--primary)" />
-                          <div className="infra-label"><strong>DES SOLUTIONS</strong><br />INNOVANTES ET<br />ADAPTÉES</div>
-                        </div>
-                        <div className="infra-item">
-                          <TrendingUp size={20} color="var(--primary)" />
-                          <div className="infra-label"><strong>DES RÉSULTATS</strong><br />CONCRETS ET<br />MESURABLES</div>
-                        </div>
-                        <div className="infra-item">
-                          <Heart size={20} color="var(--primary)" />
-                          <div className="infra-label"><strong>UN PARTENAIRE</strong><br />DE CONFIANCE À<br />VOS CÔTÉS</div>
-                        </div>
+                    </div>
+                    <div className="presence-item">
+                      <div className="presence-dot" />
+                      <div className="presence-text">
+                        <strong>Représentation</strong>
+                        <span>Akwa – Douala</span>
                       </div>
+                    </div>
+                    <div className="presence-item">
+                      <div className="presence-dot" />
+                      <div className="presence-text">
+                        <strong>Yaoundé</strong>
+                        <span>Couverture Nationale</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="apc-footer">
+                    <div className="infra-mini">
+                      <Users size={16} />
+                      <span>30+ Collaborateurs</span>
                     </div>
                   </div>
                 </div>

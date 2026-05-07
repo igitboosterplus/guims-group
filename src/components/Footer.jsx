@@ -71,21 +71,7 @@ const Footer = () => {
             {/* ── Brand Column ── */}
             <div className="footer-col footer-col--brand">
               <Link to="/" className="footer-logo" aria-label="GUIMS GROUP">
-                <div className="footer-logo-icon">
-                  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="24" cy="24" r="22" stroke="currentColor" strokeWidth="2.5" />
-                    <circle cx="24" cy="24" r="14" stroke="currentColor" strokeWidth="2" strokeDasharray="4 3" />
-                    <circle cx="24" cy="24" r="5" fill="currentColor" />
-                    <line x1="24" y1="2" x2="24" y2="11" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-                    <line x1="24" y1="37" x2="24" y2="46" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-                    <line x1="2" y1="24" x2="11" y2="24" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-                    <line x1="37" y1="24" x2="46" y2="24" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="footer-logo-name">GUIMS <em>GROUP</em></div>
-                  <div className="footer-logo-tagline">Petit à petit, on y arrivera</div>
-                </div>
+                <img src="/logo-guims.jpg" alt="GUIMS GROUP" className="footer-logo-img" />
               </Link>
 
               <p className="footer-brand-desc">
